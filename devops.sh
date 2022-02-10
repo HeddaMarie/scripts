@@ -19,5 +19,5 @@ usermod -a -G sudo bob
 usermod -a -G sudo janet
 # create required group(s) and add users to required group(s)
 groupadd developers 
-usermod -a -G developers ti
+usermod -a -G developers tim
 usermod -a -G developers janet
