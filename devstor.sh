@@ -30,7 +30,7 @@ apt install software-properties-common
 # Add community GlusterFS PPA
 add-apt-repository ppa:gluster/glusterfs-7
 apt update
-apt install glusterfs-server
+apt install glusterfs-server -y
 
 # End gluster FS install steps.
 
