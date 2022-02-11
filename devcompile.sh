@@ -7,8 +7,9 @@ apt install subversion -y
 apt install emacs -y
 apt install jed -y
 apt install git -y
-# Install compile-utilities 
-apt install make -y
+# Install compile-utilities
+apt install build-essential -y
+apt-get install manpages-dev
 apt install binutils -y
 apt install gcc -y
 # add specified users
