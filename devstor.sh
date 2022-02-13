@@ -23,9 +23,9 @@ echo deb https://download.gluster.org/pub/gluster/glusterfs/LATEST/Debian/${DEBI
 
 # uppdate package list
 apt update
-apt install glusterfs-server
+apt install glusterfs-server -y
 # Ubuntu common files for gluster
-apt install software-properties-common
+apt install software-properties-common -y
 
 # Add community GlusterFS PPA
 add-apt-repository ppa:gluster/glusterfs-7
