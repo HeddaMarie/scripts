@@ -1,0 +1,113 @@
+global {
+        project devenv
+}
+
+host devenv-developer-01 {
+        openstack {
+                user_data {
+                wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/devops.sh
+                chmod +x devops.sh
+                ./devops.sh
+                }
+
+                image Ubuntu-20.04-LTS
+                flavor m1.medium
+                keypair #DEFINE_YOUR_KEYPAIR_HERE
+        }
+        network eth0 {
+                net netsys_net
+                address dhcp
+        }
+}
+
+host devenv-developer-02 {
+        openstack {
+                user_data {
+                wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/devops.sh
+                chmod +x devops.sh
+                chmod +x devops.sh
+                ./devops.sh
+                }
+                image Ubuntu-20.04-LTS
+                flavor m1.medium
+                keypair #DEFINE_YOUR_KEYPAIR_HERE
+        }
+        network eth0 {
+                net netsys_net
+                address dhcp
+        }
+}
+
+
+
+host devenv-stor-01 {
+        openstack {
+                user_data {
+                wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/devstor.sh
+                chmod +x devstor.sh
+                ./devstor.sh
+                }
+
+                image Ubuntu-20.04-LTS
+                flavor m1.medium
+                keypair #DEFINE_YOUR_KEYPAIR_HERE
+        }
+        network eth0 {
+                net netsys_net
+                address dhcp
+        }
+}
+
+host devenv-stor-02 {
+        openstack {
+                user_data {
+                wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/devstor.sh
+                chmod +x devstor.sh
+                ./devstor.sh
+                }
+
+                image Ubuntu-20.04-LTS
+                flavor m1.medium
+                keypair #DEFINE_YOUR_KEYPAIR_HERE
+        }
+        network eth0 {
+                net netsys_net
+                address dhcp
+        }
+}
+
+
+host devenv-compile-01 {
+        openstack {
+                user_data {
+                wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/devcompile.sh
+                chmod +x devcompile.sh
+                ./devcompile.sh
+                }
+
+                image Ubuntu-20.04-LTS
+                flavor m1.medium
+                keypair #DEFINE_YOUR_KEYPAIR_HERE
+        }
+        network eth0 {
+                net netsys_net
+                address dhcp
+        }
+}
+
+host devenv-compile-02 {
+        openstack {
+                user_data {
+                wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/devcompile.sh
+                chmod +x devcompile.sh
+                ./devcompile.sh
+                }
+                image Ubuntu-20.04-LTS
+                flavor m1.medium
+                keypair #DEFINE_YOUR_KEYPAIR_HERE
+        }
+        network eth0 {
+                net netsys_net
+                address dhcp
+        }
+}
