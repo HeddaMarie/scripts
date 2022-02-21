@@ -13,3 +13,4 @@ apt-get install -y docker-ce docker-ce-cli containerd.io
 docker ps
 echo "Installs finished, print version to verify"
 docker --version
+docker container run --name nginx --restart unless-stopped -p 8080:80 -d nginx
