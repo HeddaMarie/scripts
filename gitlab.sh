@@ -1,4 +1,5 @@
 #! /bin/bash
+apt install docker-compose -y
 wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/docker-compose.yml
 export GITLAB_HOME=/srv/gitlab
 mkdir -p /srv/gitlab
