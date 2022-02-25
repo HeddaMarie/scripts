@@ -10,4 +10,4 @@ echo "deb http://deb.theforeman.org/ focal 3.0" >> /etc/apt/sources.list.d/forem
 echo "deb http://deb.theforeman.org/ plugins 3.0" >> /etc/apt/sources.list.d/foreman.list
 apt update
 sleep 10
-apt install foreman-installer
+apt install foreman-installer -y
