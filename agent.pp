@@ -1,5 +1,5 @@
-$master = "tf-puppet.sparkles.gg"
-$master_ip = "10.0.0.101"
+$master = "puppet.local"
+$master_ip = "10.0.65.250"
 $interval = "600"
 
 host { 'master.openstacklocal' :
