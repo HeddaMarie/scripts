@@ -4,5 +4,5 @@ dpkg -i puppet6-release-focal.deb
 apt update
 sleep 20
 apt -y install puppet-agent
-echo "10.0.0.111 tf-puppet.sparkles.gg tf-puppet" >> /etc/hosts
+echo "10.0.65.250 puppet.local" >> /etc/hosts
 /opt/puppetlabs/puppet/bin/puppet apply agent.pp
