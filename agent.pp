@@ -1,8 +1,8 @@
-$master = "puppet.local"
-$master_ip = "10.0.65.250"
+$master = "puppet.sparkles.gg"
+$master_ip = "10.0.0.3"
 $interval = "600"
 
-host { 'master.openstacklocal' :
+host { 'puppet.sparkles.gg' :
      name => $master,
      ensure => present,host_aliases => "master",
      ip => $master_ip
