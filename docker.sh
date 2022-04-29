@@ -9,5 +9,6 @@ echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] 
 
 apt-get update
 apt-get install -y docker-ce docker-ce-cli containerd.io
+sudo usermod -aG docker $USER
+newgrp docker
 docker ps
-echo "Installs finished, print version to verify"
