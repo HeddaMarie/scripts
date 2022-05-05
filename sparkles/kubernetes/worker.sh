@@ -46,7 +46,7 @@ apt-get update
 apt-get install -y apt-transport-https ca-certificates curl
 
 # Step 6, install kubeadm and kubelet.
-apt install kubeadm kubelet
+apt install kubeadm kubelet -y
 systemctl enable --now kubelet
 
 # Ready to join cluster. 
