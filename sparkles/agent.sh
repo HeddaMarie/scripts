@@ -1,3 +1,4 @@
+sleep 60
 apt-get update
 wget http://apt.puppetlabs.com/puppet6-release-focal.deb 
 dpkg -i puppet6-release-focal.deb 
