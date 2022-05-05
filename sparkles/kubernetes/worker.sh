@@ -5,7 +5,6 @@
 
 # Install / Enable iscsi initiator for openEBS.
 systemctl enable --now iscsid
-systemctl status iscsid
 
 
 # prepare some things.
