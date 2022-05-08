@@ -49,12 +49,6 @@ apt-get install -y apt-transport-https ca-certificates curl
 apt install kubeadm kubelet -y
 systemctl enable --now kubelet
 
-apt-get update
-apt-get install -y docker-ce docker-ce-cli containerd.io
-curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
-sudo usermod -aG docker $USER
-newgrp docker
 
 cat <<EOF | sudo tee /etc/containerd/config.toml
 #   Copyright 2018-2022 Docker Inc.
