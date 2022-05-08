@@ -13,4 +13,3 @@ curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compo
 chmod +x /usr/local/bin/docker-compose
 sudo usermod -aG docker $USER
 newgrp docker
-docker ps
