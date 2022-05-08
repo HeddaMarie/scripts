@@ -78,6 +78,9 @@ cat <<EOF | sudo tee /etc/containerd/config.toml
 EOF
 
 
+systemctl restart containerd
+systemctl restart docker
+
 # Ready to join cluster. 
 
 echo "run kubeadm token create --print-join-command on kube-master to get join token"
