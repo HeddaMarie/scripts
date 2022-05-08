@@ -13,3 +13,6 @@ apt-get install -y docker-ce docker-ce-cli containerd.io
 #chmod +x /usr/local/bin/docker-compose
 #sudo usermod -aG docker $USER
 #newgrp docker
+apt update
+docker ps
+exit
