@@ -65,3 +65,8 @@ cat <<EOF | sudo tee /etc/containerd/config.toml
 #  gid = 0
 #  level = "info"
 EOF
+
+
+systemctl restart containerd
+systemctl restart docker
+
