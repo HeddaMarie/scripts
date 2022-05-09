@@ -5,5 +5,5 @@ apt update
 sleep 20
 wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/agent.pp
 apt -y install puppet-agent
-#echo "10.0.65.250 puppet.local" >> /etc/hosts
-#/opt/puppetlabs/puppet/bin/puppet apply agent.pp
+echo "10.0.68.188 puppet.main" >> /etc/hosts
+/opt/puppetlabs/puppet/bin/puppet apply agent.pp
