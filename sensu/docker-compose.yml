@@ -1,9 +1,19 @@
-#! /bin/bash
-# Hent Alpine-based image
-docker pull sensu/sensu
+---
+version: "3"
+services:
+  sensu-backend:
+    ports:
+    - 3000:3000
+    - 8080:8080
+    - 8081:8081
+    volumes:
+    - "sensu-backend-data:/var/lib/sensu/sensu-backend/etcd"
+    command: "sensu-backend start --state-dir /var/lib/sensu/sensu-backend --log-level debug"
+    environment:
+    - SENSU_BACKEND_CLUSTER_ADMIN_USERNAME=admin
+    - SENSU_BACKEND_CLUSTER_ADMIN_PASSWORD=admin
+    image: sensu/sensu:latest
 
-# Install docker-compose
-sudo apt install docker-compose
-
-# Start sensu-backend
-docker-compose up -d
+volumes:
+  sensu-backend-data:
+    driver: local
