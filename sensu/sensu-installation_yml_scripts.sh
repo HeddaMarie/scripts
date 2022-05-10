@@ -3,6 +3,9 @@
 sudo apt update
 sudo apt upgrade -y
 
+# agent.sh
+wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/agent.sh
+
 # docker.sh
 wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/docker.sh
 
@@ -19,9 +22,10 @@ wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/sensu/sensu-backe
 wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/sensu/monitoring.sh
 
 # Give permissions
-sudo chmod +x sensu-backend.sh monitoring.sh
+sudo chmod +x agent.sh sensu-backend.sh monitoring.sh
 
 # Start scripts
+sudo ./agent.sh
 sudo ./sensu-backend.sh
 sudo ./monitoring.sh
 
