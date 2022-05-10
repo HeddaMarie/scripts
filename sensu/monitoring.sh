@@ -1,5 +1,16 @@
 #! /bin/bash
-# Installation for Sensu-agent, sensuctl, InfluxDB and Grafana
+# Installation for Sensu, Sensu-agent, sensuctl, InfluxDB and Grafana
+
+# SENSU
+# Hent Alpine-based image
+docker pull sensu/sensu
+
+# Install docker-compose
+sudo apt install docker-compose
+
+# Start sensu-backend
+docker-compose up -d
+
 
 # SENSU-AGENT
 # Add the Sensu repository
