@@ -6,7 +6,7 @@
 docker pull sensu/sensu
 
 # Install docker-compose
-sudo apt install docker-compose
+sudo apt install docker-compose -y
 
 # Start sensu-backend
 docker-compose up -d
