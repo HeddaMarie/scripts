@@ -28,4 +28,3 @@ sudo chmod +x agent.sh sensu-backend.sh monitoring.sh
 sudo ./agent.sh
 sudo ./sensu-backend.sh
 sudo ./monitoring.sh
-
