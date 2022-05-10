@@ -2,7 +2,7 @@ $master = "puppet.main"
 $master_ip = "10.0.68.188"
 $interval = "600"
 
-host { 'puppet.sparkles.gg' :
+host { 'puppet.main' :
      name => $master,
      ensure => present,host_aliases => "master",
      ip => $master_ip
