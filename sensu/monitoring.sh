@@ -12,7 +12,7 @@ sudo apt install docker-compose -y
 docker-compose up -d
 
 
-# SENSU-AGENT
+# SENSU-AGENT, code from https://kifarunix.com/install-sensu-agent-on-ubuntu-debian/ and guide on Canvas
 # Add the Sensu repository
 curl -s https://packagecloud.io/install/repositories/sensu/stable/script.deb.sh | sudo bash
 
@@ -45,7 +45,7 @@ sensuctl entity list
 sudo service sensu-agent restart
 
 
-# INFLUXDB
+# INFLUXDB, code from https://www.vultr.com/docs/how-to-install-influxdb-on-ubuntu-20-04/ and guide o Canvas
 # Get the InfluxDB GDG data key. It should respond with OK
 curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add
 
@@ -69,7 +69,7 @@ apt install influxdb-client
 
 
 
-# GRAFANA
+# GRAFANA, code from https://grafana.com/docs/grafana/latest/installation/debian/ and guide on Canvas
 
 # Install, add Grafana key and repository
 sudo apt-get install -y apt-transport-https
