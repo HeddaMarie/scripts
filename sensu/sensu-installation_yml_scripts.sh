@@ -22,7 +22,7 @@ wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/sensu/sensu-backe
 wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/sensu/monitoring.sh
 
 # Give permissions
-sudo chmod +x agent.sh sensu-backend.sh monitoring.sh
+sudo chmod +x agent.sh docker.sh sensu-backend.sh monitoring.sh
 
 # Start scripts
 sudo ./agent.sh
