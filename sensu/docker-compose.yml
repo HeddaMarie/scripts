@@ -1,5 +1,4 @@
 #! /bin/bash
-
 # Hent Alpine-based image
 docker pull sensu/sensu
 
