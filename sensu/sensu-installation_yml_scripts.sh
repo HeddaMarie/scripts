@@ -1,4 +1,8 @@
 #! /bin/bash
+# Update and upgrade
+sudo apt update
+sudo apt upgrade -y
+
 # docker.sh
 wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/docker.sh
 
