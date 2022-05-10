@@ -59,8 +59,6 @@ apt install influxdb-client
 
 
 # GRAFANA
-# Move grafana.yml to /etc/grafana/provisioning/datasources
-mv influxdb.yml /etc/grafana/provisioning/datasources/influxdb.yml
 
 # Install, add Grafana key and repository
 sudo apt-get install -y apt-transport-https
@@ -71,6 +69,9 @@ echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/a
 # After the repository is added, update and install
 sudo apt-get update
 sudo apt-get install grafana -y
+
+# Move grafana.yml to /etc/grafana/provisioning/datasources
+mv influxdb.yml /etc/grafana/provisioning/datasources/influxdb.yml
 
 # After installation, start and enable grafana-server
 # sudo systemctl daemon-reload
