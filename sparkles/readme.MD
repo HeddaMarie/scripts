@@ -3,10 +3,10 @@
 
 ## step 1
 kubectl create ns openebs
-kubectl apply -f https://openebs.github.io/charts/cstor-operator.yaml
+```kubectl apply -f https://openebs.github.io/charts/cstor-operator.yaml```
 
 ## Step 2 - Install c-stor driver
-kubectl apply -f https://openebs.github.io/charts/cstor-operator.yaml
+```kubectl apply -f https://openebs.github.io/charts/cstor-operator.yaml```
 
 ## Step 3 - Create storage pools
 
@@ -15,7 +15,7 @@ check if block devices are available
 
 
 ## Step 4 prepare the c-storage-pool.yaml file
-
+filename c-storage-pool.yaml
 ```
 apiVersion: cstor.openebs.io/v1
 kind: CStorPoolCluster
