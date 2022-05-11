@@ -75,6 +75,8 @@ cstor-disk-pool   2                  2                      2                  5
 
 # Create replicaset
 
+
+filename: cstor-csi-disk.yaml
 ```
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
