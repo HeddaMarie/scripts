@@ -185,6 +185,12 @@ spec:
     persistentVolumeClaim:
       claimName: cstor-pvc
   ``` 
+start teh pod
+
+```
+
+kubectl apply -f busybox.yml 
+```
 
 Verify that the container did something that produces output
 
