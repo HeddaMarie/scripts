@@ -1,5 +1,6 @@
 # Install calico networking
 
+This guide is based on information from OpenEBS https://openebs.io/docs/user-guides/prerequisites#ubuntu
 ```
 kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 ```
