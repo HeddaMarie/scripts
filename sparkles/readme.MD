@@ -1,3 +1,9 @@
+# Install calico networking
+
+```
+kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+```
+
 
 # Install OpenEBS
 
