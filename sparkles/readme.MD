@@ -63,7 +63,110 @@ NAME              HEALTHYINSTANCES   PROVISIONEDINSTANCES   DESIREDINSTANCES   A
 cstor-disk-pool   2                  2                      2                  5m54s
 ```
 
+Check if disks are online:
 
 
+```
+kubectl get cspc -n openebs
+NAME              HEALTHYINSTANCES   PROVISIONEDINSTANCES   DESIREDINSTANCES   AGE
+cstor-disk-pool   2                  2                      2                  5m54s
+```
+
+
+# Create replicaset
+
+```
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: cstor-csi-disk
+provisioner: cstor.csi.openebs.io
+allowVolumeExpansion: true
+parameters:
+  cas-type: cstor
+  # cstorPoolCluster should have the name of the CSPC
+  cstorPoolCluster: cstor-disk-pool
+  # replicaCount should be <= no. of CSPI created in the selected CSPC
+  replicaCount: "2"
+```
+
+
+## Apply replicaset
+
+``` 
+kubectl apply -f cstor-csi-disk.yaml
+output : storageclass.storage.k8s.io/cstor-csi-disk created
+
+```
+
+## Verify the storage class 
+
+```
+kubectl get sc
+
+
+NAME               PROVISIONER            RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+cstor-csi-disk     cstor.csi.openebs.io   Delete          Immediate              true                   31s
+openebs-device     openebs.io/local       Delete          WaitForFirstConsumer   false                  17h
+openebs-hostpath   openebs.io/local       Delete          WaitForFirstConsumer   false                  17h
+
+```
+
+## Create Persistant Volume Claim
+
+filename pvc.yaml
+```
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: cstor-pvc
+spec:
+  storageClassName: cstor-csi-disk
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+```
+
+Apply and check
+
+```
+kubectl apply -f pvc.yml 
+persistentvolumeclaim/cstor-pvc created
+
+kubectl get pvc
+NAME        STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS     AGE
+cstor-pvc   Bound    pvc-a9c13aee-9ece-49ff-b9f3-cac71424b3ed   1Gi        RWO            cstor-csi-disk   44s
+```
+
+
+## Launch an app that uses the above claimed storage
+
+filename busybox.yaml
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox
+  namespace: default
+spec:
+  containers:
+  - command:
+       - sh
+       - -c
+       - 'date >> /mnt/openebs-csi/date.txt; hostname >> /mnt/openebs-csi/hostname.txt; sync; sleep 5; sync; tail -f /dev/null;'
+    image: busybox
+    imagePullPolicy: Always
+    name: busybox
+    volumeMounts:
+    - mountPath: /mnt/openebs-csi
+      name: demo-vol
+  volumes:
+  - name: demo-vol
+    persistentVolumeClaim:
+      claimName: cstor-pvc
+  ``` 
 
 
