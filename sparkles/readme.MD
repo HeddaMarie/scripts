@@ -17,6 +17,9 @@ kubectl apply -f https://openebs.github.io/charts/cstor-operator.yaml
 check if block devices are available
 ```
 kubectl get bd -n openebs
+NAME                                           NODENAME        SIZE          CLAIMSTATE   STATUS   AGE
+blockdevice-16e17260792df1af2e1437e85c1e603e   kube-worker-2   10736352768   Unclaimed    Active   18s
+blockdevice-e34d53b8186caa8dfdc55fe3ffba9f4b   kube-worker-1   10736352768   Unclaimed    Active   29s
 ```
 
 
