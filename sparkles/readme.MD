@@ -192,3 +192,13 @@ Verify that the container did something that produces output
 kubectl exec -it busybox -- cat /mnt/openebs-csi/date.txt
 Mon May  2 13:29:23 UTC 2022
 ```
+
+
+
+# Finishline
+
+See all deployed pods
+```
+kubectl get pods -A -o wide
+``` 
+
