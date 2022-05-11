@@ -12,7 +12,7 @@ wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/docker.sh
 # docker-compose.yml, source: https://oslomet.instructure.com/courses/23075/files/2636846?module_item_id=416082
 wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/sensu/docker-compose.yml
 
-# sensu-daemonset.yml, source: https://github.com/sensu/sensu-k8s-quick-start/blob/master/kubernetes/sensu-daemonset.yaml
+# sensu-daemonset.yml, source: https://github.com/sensu/sensu-k8s-quick-start
 wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/sensu/sensu-daemonset.yml
 
 # influxdb.yml, source: https://oslomet.instructure.com/courses/23075/files/2636990?module_item_id=416151
