@@ -12,6 +12,9 @@ wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/docker.sh
 # docker-compose.yml
 wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/sensu/docker-compose.yml
 
+# sensu-daemonset.yml
+wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/sensu/sensu-daemonset.yml
+
 # influxdb.yml
 wget https://raw.githubusercontent.com/HeddaMarie/scripts/main/sensu/influxdb.yml
 
