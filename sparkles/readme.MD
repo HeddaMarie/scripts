@@ -1,10 +1,11 @@
 
 # Install OpenEBS
 
-## step 1
-kubectl create ns openebs
+## step 1 - Create namespace and install operator
+
 ```
-kubectl apply -f https://openebs.github.io/charts/cstor-operator.yaml
+kubectl create ns openebs
+kubectl apply -f https://openebs.github.io/charts/openebs-operator.yaml
 ```
 
 ## Step 2 - Install c-stor driver
