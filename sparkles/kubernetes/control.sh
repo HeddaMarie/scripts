@@ -70,3 +70,5 @@ EOF
 systemctl restart containerd
 systemctl restart docker
 
+echo $'\n\n\n'
+echo "Run kubeadm init --pod-network-cidr=192.168.0.0/16"
