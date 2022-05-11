@@ -73,9 +73,10 @@ blockdevice-e34d53b8186caa8dfdc55fe3ffba9f4b   kube-worker-1   10736352768   Cla
 Check CSPC creation in openEBS namespace
 
 ```
-kubectl get cspc -n openebs
-NAME              HEALTHYINSTANCES   PROVISIONEDINSTANCES   DESIREDINSTANCES   AGE
-cstor-disk-pool   2                  2                      2                  5m54s
+kubectl get cspi -n openebs
+NAME                   HOSTNAME        FREE    CAPACITY   READONLY   PROVISIONEDREPLICAS   HEALTHYREPLICAS   STATUS   AGE
+cstor-disk-pool-dm7l   kube-worker-2   9630M   9630071k   false      0                     0                 ONLINE   6m35s
+cstor-disk-pool-pjrj   kube-worker-1   9630M   9630074k   false      0                     0                 ONLINE   6m36s
 ```
 
 Check if disks are online:
