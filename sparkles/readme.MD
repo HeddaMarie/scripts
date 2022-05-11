@@ -13,7 +13,6 @@ kubectl apply -f https://openebs.github.io/charts/openebs-operator.yaml
 kubectl apply -f https://openebs.github.io/charts/cstor-operator.yaml
 ```
 
-## Step 3 - Create storage pools
 
 check if block devices are available
 ```
